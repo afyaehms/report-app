@@ -4,6 +4,7 @@
 .settings
 **/.project
 **/.settings
+**/.classpath
 **/target
 *.iml
 /.idea
