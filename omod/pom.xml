@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>reportapp</groupId>
+		<groupId>org.openmrs.module</groupId>
 		<artifactId>reportapp</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
@@ -30,22 +30,20 @@
 			<artifactId>${project.parent.artifactId}-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
-		
 				
 		<dependency>
-
 			<groupId>org.openmrs.module</groupId>
-						
 			<artifactId>uilibrary-api</artifactId>
-												
 		</dependency>
 		
 		<dependency>
-
 			<groupId>org.openmrs.module</groupId>
-						
 			<artifactId>uiframework-api</artifactId>
-												
+		</dependency>
+		
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>report-api</artifactId>
 		</dependency>
 						
 		<!-- End OpenMRS modules -->
@@ -87,6 +85,19 @@
 		</dependency>
 		
 		<!-- End OpenMRS core -->
+		
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>coreapi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>engineapi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>modelapi</artifactId>
+		</dependency>
 
 	</dependencies>
 
