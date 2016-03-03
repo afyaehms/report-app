@@ -27,20 +27,14 @@
 				
 		<!-- Begin OpenMRS modules -->
 				
-		<dependency>
-		
+		<dependency>		
 			<groupId>org.openmrs.module</groupId>
-									
 			<artifactId>uilibrary-api</artifactId>
-															
 		</dependency>
 				
 		<dependency>
-		
 			<groupId>org.openmrs.module</groupId>
-									
 			<artifactId>uiframework-api</artifactId>
-															
 		</dependency>
 				
 		<!-- End OpenMRS modules -->
