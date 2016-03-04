@@ -7,11 +7,7 @@
 		<tr>
 			<td>Name</td>
 			<td>Description</td>
-			<td>Retired</td>
-			<td>Created On</td>
-			<td>Created By</td>
-			<td>Type</td>
-			<td>Role</td>
+            <td>Actions</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,14 +15,16 @@
 			<tr data-report-id="${report.id}">
 				<td>${report.name}</td>
 				<td>${report.description}</td>
-				<td>${report.retired}</td>
-				<td>${report.createdOn}</td>
-				<td>${report.createdBy}</td>
-				<td>${report.reportTypes}</td>
-				<td>${report.reportRoles}</td>
+                <td>
+                    <a href="">
+                        <i class=" icon-search small"></i>
+                    </a>
+
+                </td>
 			</tr>
 		<% } %>
 	</tbody>
+
 </table>
 
 <script>
