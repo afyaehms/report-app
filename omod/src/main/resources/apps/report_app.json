@@ -8,7 +8,7 @@
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
         "label": "Report",        // text or message code (this is shown to the user)
-        "url": "",        // clicking on the app icon goes to this link,
+        "url": "reportapp/reportList.page",        // clicking on the app icon goes to this link,
         "order": 10,
         "icon": "icon-tasks",        // see the uicommons style guide icons
         "requiredPrivilege": "Access Report"        // require this privilege to show the link
