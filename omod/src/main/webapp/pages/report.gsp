@@ -19,9 +19,7 @@ jq(function(){
 		jq.each(formData, function () {
 			requestParameters[this.name] = this.value || '';
 		});
-		console.log(requestParameters);
 		jq.getJSON(emr.fragmentActionLink("reportapp", "reportData", "getReportData", requestParameters), function (data){
-			reportDataTableObject.empty();
 			reportData = data.reportData;
 			if (reportData.length > 0) {
 				var columnOptionsBuilder = "[";
@@ -41,6 +39,7 @@ jq(function(){
 				"pageLength" : 15,
 				"pagingType" : "full_numbers",
 				"ordering" : false,
+				"destroy": true,
 				"dom" : 't<"fg-toolbar ui-toolbar ui-corner-bl ui-corner-br ui-helper-clearfix datatables-info-and-pg"ip>',
 				"language" : {
 					"info": "Report data",
