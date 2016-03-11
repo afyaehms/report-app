@@ -131,22 +131,41 @@
 			</dependency>
 						
 			<!-- End OpenMRS core -->
+			<dependency>
+				<groupId>com.ibm.icu</groupId>
+				<artifactId>icu4j</artifactId>
+				<version>4.2.1</version>
+			</dependency>
 
 			<dependency>
-				<groupId>org.eclipse.birt</groupId>
-				<artifactId>coreapi</artifactId>
-				<version>2.3.2</version>
+				<groupId>org.eclipse.birt.runtime</groupId>
+				<artifactId>org.eclipse.birt.runtime</artifactId>
+				<version>4.2.0</version>
+				<scope>compile</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-lang</groupId>
+						<artifactId>commons-lang</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.eclipse.birt.runtime</groupId>
+						<artifactId>org.apache.commons.logging</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+						<artifactId>org.apache.xerces</artifactId>
+					</exclusion>
+					<exclusion>
+						 <groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+						 <artifactId>org.apache.batik.pdf</artifactId>
+					 </exclusion>
+				</exclusions>
 			</dependency>
-			<dependency>
-				<groupId>org.eclipse.birt</groupId>
-				<artifactId>engineapi</artifactId>
-				<version>2.3.2</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.birt</groupId>
-				<artifactId>modelapi</artifactId>
-				<version>2.3.2</version>
-			</dependency>
+			
 
 		</dependencies>
 	</dependencyManagement>
