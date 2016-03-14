@@ -38,7 +38,7 @@ ui.includeJavascript("patientqueueapp", "jquery.dataTables.min.js")
 				<td>${report.description}</td>
                 <td>
 					<% report.reportTypes.each { type -> %>
-						<a href="${birtViewerUrl}/frameset?__report=${dataUrl + type.path}" target="_blank" >
+						<a href="${birtViewerUrl}frameset?__report=${dataUrl + type.path}" target="_blank" >
 							<i class="icon-list-alt small"></i>
 						</a>
 					<% } %>
