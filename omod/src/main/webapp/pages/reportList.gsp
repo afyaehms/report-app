@@ -1,6 +1,27 @@
 <%
-	ui.decorateWith("appui", "standardEmrPage");
+	ui.decorateWith("appui", "standardEmrPage")
+ui.includeCss("uicommons", "datatables/dataTables_jui.css")
+ui.includeJavascript("patientqueueapp", "jquery.dataTables.min.js")
 %>
+
+<style>
+#report-search-form input {
+  display: inline;
+  margin-top: 5px;
+}
+
+#reports-table {
+  margin-top: 1em;
+}
+#report-search-clear-button {
+  position: relative;
+  right: 25px;
+}
+</style>
+
+<form method="get" id="report-search-form" onsubmit="return false">
+    <input type="text" id="report-search" placeholder="Search by Report Name" /><i id="report-search-clear-button" class="small icon-remove-sign"></i>
+</form>
 
 <table id="reports-table">
 	<thead>
@@ -16,9 +37,11 @@
 				<td>${report.name}</td>
 				<td>${report.description}</td>
                 <td>
-                    <a href="">
-                        <i class=" icon-search small"></i>
-                    </a>
+					<% report.reportTypes.each { type -> %>
+						<a href="${birtViewerUrl}/frameset?__report=${dataUrl + type.path}" target="_blank" >
+							<i class="icon-list-alt small"></i>
+						</a>
+					<% } %>
 
                 </td>
 			</tr>
@@ -31,7 +54,7 @@
 jq(function(){
 	reportTable = jq('#reports-table');
 	reportsDataTable = reportTable.DataTable({
-        searching: false,
+        searching: true,
         lengthChange: false,
         pageLength: 15,
         jQueryUI: true,
@@ -46,33 +69,18 @@ jq(function(){
                 next: 'Next',
                 last: 'Last'
             }
-        },
-        "drawCallback" : function (settings) {
-        	if(isTableEmpty()){
-                //this should ensure that nothing happens when the use clicks the
-                //row that contain the text that says 'No data available in table'
-                return;
-            }
-        	//drawCallback is called on each page redraw so we need to remove any previous handlers
-            //otherwise there will multiple hence the logic getting executed multiples times as the
-            //user the goes back and forth between pages
-            reportTable.find('tbody tr').unbind('click');
-            reportTable.find('tbody tr').unbind('hover');
-
-            reportTable.find('tbody tr').click(
-                function(){
-                    var reportId = jq(this).data("reportId");
-                    window.location = emr.pageLink("reportapp", "viewReport", { "reportId", reportId });
-                }
-            );
         }
+    });
+
+    jq("#report-search").on("keyup", function(){
+        var searchPhrase = jq(this).val();
+        console.log("Searching for: " + searchPhrase);
+        reportsDataTable.search(searchPhrase).draw();
+    });
+
+    jq("#report-search-clear-button").on("click", function(){
+        jq("#report-search").val('');
+        reportsDataTable.search('').draw();
     });
 });
 </script>
-
-<style>
-#reports-table tbody tr:hover {
-	background-color: #f26522;
-	cursor: pointer;
-}
-</style>
