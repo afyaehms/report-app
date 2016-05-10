@@ -23,10 +23,5 @@
 	<!-- Add here beans related to the web context -->
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
 		<property name="moduleId" value="reportapp"/>
-	</bean>
-	
-	<bean class="org.openmrs.module.reportapp.birt.BirtEngineFactory">
-		<property name="logLevel" value="FINE"></property>
-	</bean>
-		
+	</bean>		
 </beans>
