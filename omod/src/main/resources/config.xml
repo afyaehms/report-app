@@ -30,6 +30,9 @@
 		<require_module version="1.4">
 			org.openmrs.module.appui
 		</require_module>
+		<require_module version="2.4">
+			org.openmrs.module.appframework
+		</require_module>
 	</require_modules>
 	<!-- / Required Modules -->
 	

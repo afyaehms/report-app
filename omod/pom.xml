@@ -43,6 +43,11 @@
 		
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
+			<artifactId>appframework-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
 			<artifactId>appui-omod</artifactId>
 		</dependency>
 		
@@ -50,7 +55,7 @@
 			<groupId>org.openmrs.module</groupId>
 			<artifactId>report-api</artifactId>
 		</dependency>
-						
+
 		<!-- End OpenMRS modules -->
 		
 
