@@ -124,6 +124,13 @@
 		</tr>
 	</thead>
 	<tbody>
+		<% if (reports.empty) { %>
+			<tr>
+				<td colspan="4">
+					No Reports!
+				</td>
+			</tr>
+		<% } %>
 		<% reports.eachWithIndex { report, index -> %>
 			<tr data-report-id="${report.id}">
 				<td>${index+1}</td>

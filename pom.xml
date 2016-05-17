@@ -54,29 +54,18 @@
 						
 			<!-- Begin OpenMRS modules -->
 			
-						
 			<dependency>
-			
 				<groupId>org.openmrs.module</groupId>
-												
 				<artifactId>uilibrary-api</artifactId>
-																								
 				<version>2.0.4</version>
-												
 				<scope>provided</scope>
-				
 			</dependency>
-						
 			<dependency>
 			
 				<groupId>org.openmrs.module</groupId>
-												
 				<artifactId>uiframework-api</artifactId>
-																								
 				<version>3.3.1</version>
-												
 				<scope>provided</scope>
-				
 			</dependency>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
@@ -84,7 +73,12 @@
 				<version>0.2.4-SNAPSHOT</version>
 				<scope>provided</scope>
 			</dependency>
-						
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appui-omod</artifactId>
+				<version>1.4</version>
+				<scope>provided</scope>
+			</dependency>
 			<!-- End OpenMRS modules -->
 			
 
