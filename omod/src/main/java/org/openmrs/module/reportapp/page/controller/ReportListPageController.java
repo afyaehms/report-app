@@ -8,7 +8,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openmrs.Role;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.appui.UiSessionContext;
 import org.openmrs.module.report.BirtReportService;
 import org.openmrs.module.report.model.BirtReport;
 import org.openmrs.module.report.model.BirtReportConfig;
@@ -16,13 +15,12 @@ import org.openmrs.module.report.util.ReportConstants;
 import org.openmrs.ui.framework.page.PageModel;
 
 public class ReportListPageController {
-	
-	public void get(PageModel model, UiSessionContext sessionContext) {
-		sessionContext.requireAuthentication();
-		BirtReportConfig config = ReportConstants.getConfig();		
+	public void get(PageModel model) {
+
+		BirtReportConfig config = ReportConstants.getConfig();
 		String dataUrl = config.getUrlData();
 		String birtViewerUrl = config.getUrlBirt();
-		dataUrl = addLastStrokeToUrl(dataUrl);		
+		dataUrl = addLastStrokeToUrl(dataUrl);
 		birtViewerUrl = addLastStrokeToUrl(birtViewerUrl);
 		model.addAttribute("birtViewerUrl", birtViewerUrl);
 		model.addAttribute("dataUrl", dataUrl);
