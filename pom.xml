@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.openmrs.module</groupId>
 	<artifactId>reportapp</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 	<name>Report App Module</name>
 	<description>OpenMRS module for viewing BIRT reports</description>
@@ -54,37 +53,36 @@
 						
 			<!-- Begin OpenMRS modules -->
 			
-						
 			<dependency>
-			
 				<groupId>org.openmrs.module</groupId>
-												
 				<artifactId>uilibrary-api</artifactId>
-																								
 				<version>2.0.4</version>
-												
 				<scope>provided</scope>
-				
 			</dependency>
-						
 			<dependency>
-			
 				<groupId>org.openmrs.module</groupId>
-												
 				<artifactId>uiframework-api</artifactId>
-																								
 				<version>3.3.1</version>
-												
 				<scope>provided</scope>
-				
 			</dependency>
 			<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>report-api</artifactId>
-				<version>0.2.2</version>
+				<version>1.0.1</version>
 				<scope>provided</scope>
 			</dependency>
-						
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appui-omod</artifactId>
+				<version>1.4</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appframework-api</artifactId>
+				<version>2.4</version>
+				<scope>provided</scope>
+			</dependency>
 			<!-- End OpenMRS modules -->
 			
 
@@ -155,6 +153,18 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-dependency-plugin</artifactId>
 					<version>2.4</version>
+				</plugin>
+				
+				<plugin>
+					<groupId>external.atlassian.jgitflow</groupId>
+					<artifactId>jgitflow-maven-plugin</artifactId>
+					<version>1.0-m5</version>
+					<configuration>
+						<noDeploy>true</noDeploy>
+						<flowInitContext>
+							<developBranchName>qa</developBranchName>
+						</flowInitContext>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
